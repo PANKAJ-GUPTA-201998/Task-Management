@@ -15,10 +15,10 @@
     </header>
     <div class="container">
         <h2>Task Pending</h2>
-        <ul>
+        <div class="task-list">
             <% tasks.forEach(function(task){ %>
-                <li>
-                    <%= task.taskDescription %>
+                <div class="task-container">
+                    <p><%= task.taskDescription %></p>
                     <form action="/update/<%= task._id %>" method="post">
                         <input type="text" name="taskDescription" value="<%= task.taskDescription %>">
                         <button type="submit">Update</button>
@@ -26,9 +26,9 @@
                     <form action="/delete/<%= task._id %>" method="post">
                         <button type="submit">Delete</button>
                     </form>
-                </li>
+                </div>
             <% }) %>
-        </ul>
+        </div>
     </div>
 
     <!-- The Modal -->
@@ -47,3 +47,4 @@
     <script src="/scripts.js"></script>
 </body>
 </html>
+
